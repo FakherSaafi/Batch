@@ -1,4 +1,4 @@
-package com.mowitnow.Process;
+package com.mowitnow.process;
 
 import com.mowitnow.entites.Pelouse;
 import com.mowitnow.entites.TondeusePosition;
