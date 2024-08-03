@@ -1,7 +1,7 @@
-package com.mowitnow.traitement;
+package com.mowitnow.Process;
 
 import com.mowitnow.entites.Pelouse;
-import com.mowitnow.entites.PositionTondeuse;
+import com.mowitnow.entites.TondeusePosition;
 import com.mowitnow.enums.InstructionTondeuse;
 import com.mowitnow.Exception.ExceptionTondeuse;
 
@@ -9,21 +9,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * class permetant l'execution de l'ensemble des insctructions par une tondeuse
+ * Class that allows the execution of all instructions by a Tondeuse.
  * @author Fakher Saafi
  */
-public class TraitementTondeuse {
+public class TondeuseProcess {
 
 	private Pelouse pelouse;
-	private PositionTondeuse positionTondeuse;
+	private TondeusePosition TondeusePosition;
 	private List<InstructionTondeuse> listeInstruction;
 	
 	public void setPelouse(Pelouse pelouse) {
 		this.pelouse = pelouse;
 	}
 	
-	public void setPositionTondeuse(PositionTondeuse positionTondeuse) {
-		this.positionTondeuse = positionTondeuse;
+	public void setTondeusePosition(TondeusePosition TondeusePosition) {
+		this.TondeusePosition = TondeusePosition;
 	}
 
 	public void setListeInstruction(
@@ -34,21 +34,21 @@ public class TraitementTondeuse {
 		}
 	}
 	/**
-	 * executer l'ensemble des insctructions par une tondeuse
+	 * Execute all instructions for a tondeuse
 	 * @throws ExceptionTondeuse
 	 */
 	public void executerInstructions() throws ExceptionTondeuse{
 		for(InstructionTondeuse instruction : listeInstruction){
-			TraitementInstruction.executerInstruction(positionTondeuse,
-					instruction, this.pelouse.getPositionMax());
+			InstructionProcess.executerInstruction(TondeusePosition,
+					instruction, this.pelouse.getMaxPosition());
 		}
 	}
 
 	public String toString(){
-		return 	positionTondeuse.getCoordonneesTondeuse().getX() 
+		return 	TondeusePosition.getCoordinatesTondeuse().getX()
 				+ " " 
-				+ positionTondeuse.getCoordonneesTondeuse().getY()
+				+ TondeusePosition.getCoordinatesTondeuse().getY()
 				+ " " 
-				+ positionTondeuse.getOrientationTondeuse().getCodeOrientation() ;
+				+ TondeusePosition.getOrientationTondeuse().getOrientationCode() ;
 	}
 }

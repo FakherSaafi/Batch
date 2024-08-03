@@ -1,20 +1,20 @@
 package com.mowitnow.entites;
 public class Pelouse {
 
-	private Coordonnees positionMax;
+	private Coordinates maxPosition;
 	public Pelouse(){
 		
 	}
-	public Pelouse(Coordonnees pPositionMax) {
-		this.positionMax = pPositionMax;
+	public Pelouse(Coordinates pMaxPosition) {
+		this.maxPosition = pMaxPosition;
 	}
 
-	public Coordonnees getPositionMax() {
-		return positionMax;
+	public Coordinates getMaxPosition() {
+		return maxPosition;
 	}
 
-	public void setPositionMax(Coordonnees positionMax) {
-		this.positionMax = positionMax;
+	public void setMaxPosition(Coordinates maxPosition) {
+		this.maxPosition = maxPosition;
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class Pelouse {
 		final int hash = 57;
 		int result = 1;
 		result = hash * result
-				+ ((positionMax == null) ? 0 : positionMax.hashCode());
+				+ ((maxPosition == null) ? 0 : maxPosition.hashCode());
 		return result;
 	}
 	@Override
@@ -34,10 +34,10 @@ public class Pelouse {
 		if (getClass() != obj.getClass())
 			return false;
 		Pelouse other = (Pelouse) obj;
-		if (positionMax == null) {
-			if (other.positionMax != null)
+		if (maxPosition == null) {
+			if (other.maxPosition != null)
 				return false;
-			} else if (!positionMax.equals(other.positionMax))
+			} else if (!maxPosition.equals(other.maxPosition))
 				return false;
 		return true;
 	}

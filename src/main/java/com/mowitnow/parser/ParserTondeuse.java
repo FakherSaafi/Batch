@@ -1,7 +1,7 @@
 package com.mowitnow.parser;
 
 /**
- * class permetant la validation et le lancement d'une tondeuse
+ * This class is for parsing validating Tondeuse data
  * @author Fakher Saafi
  *
  */
@@ -18,7 +18,7 @@ public class ParserTondeuse {
 	}
 	
 	/**
-	 * @return true si les informations de la tondeuse sont correctes
+	 * @return true if the Tondeuse's information is correct.
 	 */
 	public boolean executeParseValidation(){
 		return ParserValidation.parseTondeuse(tondeuse)

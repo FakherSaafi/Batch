@@ -4,7 +4,7 @@ import com.mowitnow.enums.InstructionTondeuse;
 import com.mowitnow.enums.Orientation;
 
 /**
- * class contenant les méthodes permettant de valider le format des lignes dans le fichier.
+ * A class containing methods to validate the format of the lines in the file
  * @author Fakher Saafi
  *
  */
@@ -15,43 +15,43 @@ public class ParserValidation {
 	}
 
 	/**
-	 * parser la position de la tondeuse et son orientation
-	 * La position et l'orientation sont fournies sous la forme de 2 chiffres et une lettre,
-	 * séparés par un espace
+	 * Parse the Tondeuse's position and orientation
+	 * The position and orientation are provided as 2 digits and a letter,
+	 * separated by a space
 	 * @param tondeuse
-	 * @return true si la ligne des positions est correcte, false sinon
+	 * @return true if the position line is correct, false otherwise.
 	 */
 	public static boolean parseTondeuse(String tondeuse){
 		StringBuilder stringBuilder = new StringBuilder("");
-		stringBuilder.append(Orientation.NORTH.getCodeOrientation())
-			.append("|").append(Orientation.SOUTH.getCodeOrientation())
-			.append("|").append(Orientation.EAST.getCodeOrientation())
-			.append("|").append(Orientation.WEST.getCodeOrientation());
+		stringBuilder.append(Orientation.NORTH.getOrientationCode())
+			.append("|").append(Orientation.SOUTH.getOrientationCode())
+			.append("|").append(Orientation.EAST.getOrientationCode())
+			.append("|").append(Orientation.WEST.getOrientationCode());
 		String regex = stringBuilder.toString();
 		return tondeuse.matches("(\\d+) (\\d+) (" + regex +")");
 	}
 	
 	/**
-	 * parser la ligne des instructions
-	 * les instructions sont une suite de caractères <<D>> <<G>> <<A>> sans espaces
+	 * Parse the instruction line
+	 * The instructions are a sequence of characters "D", "G", "A" without spaces
 	 * @param instructions
-	 * @return true si la ligne des instructions est correcte
+	 * @return true if the instruction line is correct.
 	 */
 	public static boolean parseListInstruction(String instructions){
 		StringBuilder stringBuilder = new StringBuilder("");
-		stringBuilder.append("(").append(InstructionTondeuse.AVANCER.getCodeInstruction())
-		.append("|").append(InstructionTondeuse.DROITE.getCodeInstruction())
-		.append("|").append(InstructionTondeuse.GAUCHE.getCodeInstruction())
+		stringBuilder.append("(").append(InstructionTondeuse.FORWARD.getCodeInstruction())
+		.append("|").append(InstructionTondeuse.RIGHT.getCodeInstruction())
+		.append("|").append(InstructionTondeuse.LEFT.getCodeInstruction())
 		.append(")+");
 		String regex = stringBuilder.toString();
 		return instructions.matches(regex);
 	}
 
 	/**
-	 * parser la position de la pelouse
-	 * la position de la pelouse est sous forme de 2 chiffres séparés par espace
+	 * Parses the lawn's position.
+	 * The Pelouse's position is in the form of 2 digits separated by a space.
 	 * @param pelouse
-	 * @return true si la ligne des instructions est correcte, false sinon
+	 * @return true if the position line is correct, false otherwise.
 	 */
 	public static boolean parsePelouse(String pelouse){
 		return pelouse.matches("(\\d+) (\\d+)");

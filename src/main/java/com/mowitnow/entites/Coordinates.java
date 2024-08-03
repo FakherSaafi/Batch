@@ -1,20 +1,20 @@
 package com.mowitnow.entites;
 
-public class Coordonnees {
+public class Coordinates {
 	
 	private int x;
 	private int y;
 	
-	public Coordonnees(int X, int Y){
+	public Coordinates(int X, int Y){
 		this.x = X;
 		this.y = Y;
 	}
 	
 	/**
-	 * vérifier si les coordonnées de la tondeuse après mouvement sont en dehors de la pelouse
-	 * @return true si les coordonnées de la tondeuse sont à l'intérieur de la pelouse
+	 * check if Tondeuse coordinates after move are outside Pelouse
+	 * * @return true if Tondeuse coordinates are inside Pelouse
 	 */
-	public boolean isHorsCoordonneesPelouse(Coordonnees c){
+	public boolean isOutsideCoordinatesPelouse(Coordinates c){
 		return c.getX() >= 0
 				&& c.getY() >= 0
 				&& c.getX() <= this.x
@@ -46,7 +46,7 @@ public class Coordonnees {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Coordonnees other = (Coordonnees) obj;
+		Coordinates other = (Coordinates) obj;
 		if (x != other.x || y != other.y)
 			return false;
 		

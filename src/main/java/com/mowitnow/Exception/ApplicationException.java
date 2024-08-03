@@ -1,9 +1,9 @@
 package com.mowitnow.Exception;
 
 public interface ApplicationException {
-    String ERREUR_DONNEES_INCORRECTES= "données incorrectes";
-    String ERREUR_FICHIER_INEXISTANT= "fichier inexistant";
-    String ORIENTATION_INCORRECTE = "orientation incorrecte";
-    String INSTRUCTION_INCORRECTE = "instruction incorrecte";
-    String POSITION_INCORRECTE = "position incorrecte";
+    String ERROR_INCORRECT_DATA= "incorrect data";
+    String ERROR_FILE_INEXISTENT= "file not found";
+    String INCORRECT_ORIENTATION = "incorrect orientation";
+    String INCORRECT_INSTRUCTION = "incorrect instruction";
+    String INCORRECT_POSITION = "incorrect position";
 }

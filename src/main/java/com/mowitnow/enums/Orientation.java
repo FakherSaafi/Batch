@@ -7,13 +7,13 @@ public enum Orientation {
     SOUTH('S', "sud");
 
     private char codeOrientation;
-    private String libelleOrientation;
+    private String libelOrientation;
 
     Orientation(char pCodeOrientation, String pLibelleOrientation){
         this.codeOrientation = pCodeOrientation;
-        this.libelleOrientation = pLibelleOrientation;
+        this.libelOrientation = pLibelleOrientation;
     }
-    public char getCodeOrientation() {
+    public char getOrientationCode() {
         return codeOrientation;
     }
 }

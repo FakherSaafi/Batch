@@ -11,8 +11,8 @@
     <groupId>com.threebeans</groupId>
     <artifactId>batch</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>batch1</name>
-    <description>batch1</description>
+    <name>MowItNow</name>
+    <description>MowItNow with spring batch</description>
     <properties>
         <java.version>11</java.version>
     </properties>

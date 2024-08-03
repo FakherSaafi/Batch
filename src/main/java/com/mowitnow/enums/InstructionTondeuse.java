@@ -1,15 +1,15 @@
 package com.mowitnow.enums;
 
 public enum InstructionTondeuse {
-    DROITE('D', "Pivoter à droite"),
-    GAUCHE('G', "Pivoter à gauche"),
-    AVANCER('A', "Avancer");
+    RIGHT('D', "Rotate right"),
+    LEFT('G', "Rotate left"),
+    FORWARD('A', "Move forward");
 
-    private String libelleInstruction;
+    private String libelInstruction;
     private char codeInstruction;
 
     private InstructionTondeuse(char pCodeInstruction, String libelleInstruction) {
-        this.libelleInstruction = libelleInstruction;
+        this.libelInstruction = libelleInstruction;
         this.codeInstruction = pCodeInstruction;
     }
     public char getCodeInstruction() {

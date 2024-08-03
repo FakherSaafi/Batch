@@ -2,14 +2,14 @@ package com.mowitnow.entites;
 
 import com.mowitnow.enums.Orientation;
 
-public class PositionTondeuse {
+public class TondeusePosition {
 	
-	private Coordonnees coordonneesTondeuse;
+	private Coordinates coordinatesTondeuse;
 	private Orientation orientationTondeuse;
 
-	public PositionTondeuse(Coordonnees pCoordonneesTondeuse,
-			Orientation pOrientationTondeuse) {
-		this.coordonneesTondeuse = pCoordonneesTondeuse;
+	public TondeusePosition(Coordinates pCoordinatesTondeuse,
+							Orientation pOrientationTondeuse) {
+		this.coordinatesTondeuse = pCoordinatesTondeuse;
 		this.orientationTondeuse = pOrientationTondeuse;
 	}
 
@@ -21,19 +21,19 @@ public class PositionTondeuse {
 		this.orientationTondeuse = pOrientationTondeuse;
 	}
 
-	public Coordonnees getCoordonneesTondeuse() {
-		return coordonneesTondeuse;
+	public Coordinates getCoordinatesTondeuse() {
+		return coordinatesTondeuse;
 	}
 
-	public void setCoordonneesTondeuse(Coordonnees pCoordonneesTondeuse) {
-		this.coordonneesTondeuse = pCoordonneesTondeuse;
+	public void setCoordinatesTondeuse(Coordinates pCoordinatesTondeuse) {
+		this.coordinatesTondeuse = pCoordinatesTondeuse;
 	}
 
 	@Override
 	public int hashCode() {
 		final int hash = 57;
 		int result = 1;
-		result = hash * result + ((coordonneesTondeuse == null) ? 0 : coordonneesTondeuse.hashCode());
+		result = hash * result + ((coordinatesTondeuse == null) ? 0 : coordinatesTondeuse.hashCode());
 		result = hash * result + ((orientationTondeuse == null) ? 0 : orientationTondeuse .hashCode());
 		return result;
 	}
@@ -46,11 +46,11 @@ public class PositionTondeuse {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		PositionTondeuse other = (PositionTondeuse) obj;
-		if (coordonneesTondeuse == null) {
-			if (other.coordonneesTondeuse != null)
+		TondeusePosition other = (TondeusePosition) obj;
+		if (coordinatesTondeuse == null) {
+			if (other.coordinatesTondeuse != null)
 				return false;
-			} else if (!coordonneesTondeuse.equals(other.coordonneesTondeuse))
+			} else if (!coordinatesTondeuse.equals(other.coordinatesTondeuse))
 				return false;
 		if (orientationTondeuse != other.orientationTondeuse)
 			return false;
